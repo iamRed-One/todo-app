@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+@import "tailwindcss";
+
+/* @custom-variant dark (&:where(.dark, .dark *)); */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary-blue: hsl(220, 98%, 61%);
+  --color-from: hsl(192, 100%, 67%);
+  --color-to: hsl(280, 87%, 65%);
+
+  /* Light Theme */
+  --color-gray-50: hsl(0, 0%, 98%);
+  --color-purple-300: hsl(263, 100%, 75%);
+  --color-gray-300: hsl(233, 11%, 84%);
+  --color-gray-600: hsl(236, 9%, 61%);
+  --color-navy-850: hsl(235, 19%, 35%);
+  --breakpoint-sm: 100px;
+  --breakpoint-md: 375px;
+
+  /* Dark Theme */
+  --color-navy-950: hsl(235, 21%, 11%);
+  --color-navy-900: hsl(235, 24%, 19%);
+  --color-purple-300: hsl(234, 39%, 85%);
+  --color-purple-100: hsl(236, 33%, 92%);
+  --color-purple-600: hsl(235, 16%, 43%);
+  --color-purple-700: hsl(233, 14%, 35%);
+  --color-purple-800: hsl(237, 14%, 26%);
+
+  /* Font */
+  --font-family-sans: "Josefin Sans", sans-serif;
+  --font-family-mono: "JetBrains Mono", monospace;
+}
+
+@layer components {
+  .card {
+    background-color: var(--color-primary-50);
+    border: 1px solid var(--color-primary-100);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+}
