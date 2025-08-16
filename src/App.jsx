@@ -3,6 +3,7 @@ import desktopBgLight from "./assets/images/bg-desktop-light.jpg";
 import { useDarkMode } from "./hooks/useDarkMode";
 import { useState } from "react";
 import CheckBox from "./components/CheckBox";
+import TodoItem from "./components/TodoItem";
 
 const App = () => {
   const { isDark, toggleTheme } = useDarkMode();
@@ -52,57 +53,24 @@ const App = () => {
 
           {/* Todos Section */}
           <div className="dark:bg-navy-900 dark:divide-navy-850 divide-y-1 divide-gray-300 rounded-lg bg-gray-50 shadow-2xl transition-all delay-100 duration-150">
-            <div className="flex items-center justify-between px-4 py-4">
-              <div className="flex items-center gap-1">
-                <CheckBox isChecked={isChecked} setIsChecked={setIsChecked} />
-                <span className="font-family-sans text-navy-850 ml-2 text-sm dark:text-gray-600">
-                  Complete 2 hours of gym
-                </span>
-              </div>
-              <button className="cursor-pointer bg-transparent">
-                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17">
-                  <path
-                    fill="#494C6B"
-                    fill-rule="evenodd"
-                    d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
-                  />
-                </svg>
-              </button>
+            <TodoItem isChecked={isChecked} setIsChecked={setIsChecked} />
+            <TodoItem isChecked={isChecked} setIsChecked={setIsChecked} />
+            <TodoItem isChecked={isChecked} setIsChecked={setIsChecked} />
+            <TodoItem isChecked={isChecked} setIsChecked={setIsChecked} />
+
+            <div className="font-family-sans flex items-center justify-between px-4 py-4.5 text-sm text-gray-600 dark:text-gray-600">
+              <span>5 items left</span>
+              <span className="cursor-pointer text-gray-600 dark:text-gray-600">
+                Clear Completed
+              </span>
             </div>
-            <div className="flex items-center justify-between px-4 py-4">
-              <div className="flex items-center gap-1">
-                <CheckBox isChecked={isChecked} setIsChecked={setIsChecked} />
-                <span className="font-family-sans text-navy-850 ml-2 text-sm dark:text-gray-600">
-                  Complete 2 hours of gym
-                </span>
-              </div>
-              <button className="cursor-pointer bg-transparent">
-                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17">
-                  <path
-                    fill="#494C6B"
-                    fill-rule="evenodd"
-                    d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div className="flex items-center justify-between px-4 py-4">
-              <div className="flex items-center gap-1">
-                <CheckBox isChecked={isChecked} setIsChecked={setIsChecked} />
-                <span className="font-family-sans text-navy-850 ml-2 text-sm dark:text-gray-600">
-                  Complete 2 hours of gym
-                </span>
-              </div>
-              <button className="cursor-pointer bg-transparent">
-                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17">
-                  <path
-                    fill="#494C6B"
-                    fill-rule="evenodd"
-                    d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
-                  />
-                </svg>
-              </button>
-            </div>
+          </div>
+
+          {/* Quick Actions */}
+          <div className="font-family-sans flex items-center justify-evenly bg-gray-50 px-4 py-4.5 text-sm text-gray-600 shadow-lg dark:text-gray-600">
+            <button className="cursor-pointer">All</button>
+            <button className="cursor-pointer">Active</button>
+            <button className="cursor-pointer">Completed</button>
           </div>
         </section>
       </div>
